@@ -1,94 +1,68 @@
 package com.ten10.training;
 
-/**
- * Created by C0952235 on 30/09/2016.
- */
 public class Strings {
 
-    /*****************************************************************
-     *1. print Hello World to the console
-     *****************************************************************/
-    public String printAString(){
-        String helloWorld = "";
-        System.out.print(helloWorld);
-        return helloWorld;
+  /**
+   * Returns the given String in reverse.
+   * @param input - The String to be reversed.
+   * @return The reversed String.
+   */
+  public String reverseString(String input) {
+    StringBuilder newString = new StringBuilder();
+
+    char[] chars = input.toCharArray();
+
+    for (int i = chars.length - 1; i > 0; i--) {
+      newString.append(chars[i]);
     }
 
-    /*****************************************************************
-     *2. Now use a charArray to print Hello World to the console
-     *****************************************************************/
-    public String charToString(){
-        char[] helloArray = { 'H','E' };
-        String helloString = new String(helloArray);
-        System.out.println( helloString );
-        return helloString;
-    }
+    return newString.toString();
+  }
 
-    /*****************************************************************
-     *3. Seek balance in quotation marks - print the following and replace the blanks for punctuation
-     * Jack said __ I love com.ten10.training.Strings i Java __
-     *****************************************************************/
-    public String quoteMarks(){
-        String jacksQuote = "";
-        System.out.println( jacksQuote );
-        return jacksQuote;
-    }
+  /**
+   * Checks whether a given String is a palindrome (same forwards as backwards, e.g. hannah).
+   * @param input - The String to be checked.
+   * @return True if it is a palindrome, false otherwise.
+   */
+  public boolean isPalindrome(String input) {
+    return input.equals(reverseString(input));
+  }
 
-    /*****************************************************************
-     *4. We can use just part of a string
-     *****************************************************************/
-    public String partOfAString(){
-        String largeString = "123456789";
-        String smallString = largeString.substring(2);
-        System.out.print(smallString);
-        return smallString;
-    }
+  /**
+   * Transforms an array of chars into a String.
+   * @param chars - The char array to be transformed.
+   * @return A String of the char array.
+   */
+  public String charsToString(char[] chars) {
+    return String.copyValueOf(chars);
+  }
 
-    /*****************************************************************
-     *5. We can make a collection of words from a string
-     *****************************************************************/
-    public String makeCollectionOfWords(){
-        String breakfastOrder = "Bacon,Sausage,Egg,Tomato";
-        String[] splitUpOrder = breakfastOrder.split(",");
-        String myFavouriteBit = splitUpOrder[2];
-        System.out.print(myFavouriteBit);
-        return myFavouriteBit;
-    }
+  /**
+   * Transforms a given String into an array of chars.
+   * @param input - The String to be transformed.
+   * @return An array of chars from the String.
+   */
+  public char[] stringToChars(String input) {
+    return input.toCharArray();
+  }
 
-    /*****************************************************************
-     *6. We don't have to split on a comma
-     *****************************************************************/
-    public String splitWithoutComma(){
-        String lunchOrder = "Tuna Mayonnaise Cucumber Butter";
-        String[] splitUpOrder = lunchOrder.split("a");
-        String myFavouriteBit = splitUpOrder[1];
-        System.out.print(myFavouriteBit);
-        return myFavouriteBit;
-    }
+  /**
+   * Combines the given series of elements together, separated by the delimiter.
+   * @param delimiter - The character or word used to separate the elements.
+   * @param elements - A series of elements to combine.
+   * @return A combination of the elements, separated by the delimiter.
+   */
+  public String join(String delimiter, String... elements) {
+    return String.join(delimiter, elements);
+  }
 
-    /*****************************************************************
-     *7. We can join collections into a string
-     *****************************************************************/
-    public String joinCollectionsToString(){
-        String[] splitUpDinnerOrder = {"Fish", "Chips", "Peas", "Curry Sauce"};
-        String dinnerOrder = String.join("", splitUpDinnerOrder);
-        System.out.print(dinnerOrder);
-        return dinnerOrder;
-    }
-
-    /*****************************************************************
-     *8. We can recase our strings easily
-     *****************************************************************/
-    public String reCaseStrings(){
-        String lowerCase = "this is a lower case string";
-        String upperCase = lowerCase.toUpperCase();
-        String finalString = upperCase.toUpperCase();
-        System.out.print(finalString);
-        return finalString;
-
-    }
-
-
-
-
+  /**
+   * Splits the given String into an array, with each element determined by the position of a delimiter.
+   * @param delimiter - The delimiter present in the input.
+   * @param input - The String containing elements to separate.
+   * @return An array of elements.
+   */
+  public String[] split(String delimiter, String input) {
+    return input.split(delimiter);
+  }
 }

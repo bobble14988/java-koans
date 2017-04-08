@@ -1,0 +1,16 @@
+Academy 7 Koans Problems
+
+ o <project>\src\main\java\com.ten10.training
+    - These will be the components you are testing, you can consider these part of your SUT.
+ o <project>\src\main\java\com.ten10.tests
+    - These will be your tests.
+
+Instructions:
+    - No tests will pass when you first open the project. Your job is to get as many to
+      pass as possible in the time allotted.
+    - The test scenario will be in a block comment above the test itself.
+    - Before you make any changes, be sure you know what is causing the test to fail:
+        > Is there a defect with the component you're testing?
+        > Is there a issue with the test?
+        > Is the test specification incorrect?
+    - Also keep your eyes out for any incomplete or non-existent tests - a giveaway is the flag TODO!
