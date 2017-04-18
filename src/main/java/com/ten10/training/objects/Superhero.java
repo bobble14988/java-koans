@@ -1,36 +1,36 @@
 package com.ten10.training.objects;
 
-public class Superhero {
+public class Superhero extends Character {
 
-  private String name;
   private String alterEgo;
   private Villain nemesis;
-  private int strength;
 
   public Superhero(String name, String alterEgo, Villain nemesis, int strength) {
-    this.name = name;
+    super(name, strength);
+
     this.alterEgo = alterEgo;
     this.nemesis = nemesis;
-    this.strength = strength;
   }
 
-  public boolean saveTheDay(Location brawlLocation) {
+  public boolean saveTheDay(Location location) {
     boolean savedTheDay = false;
 
     this.fightBadGuys();
     String result = this.fightNemesis(this.nemesis);
 
     if (result.equals("Win")) {
-      if (brawlLocation == Location.ROOFTOP)
+      if (location == Location.ROOFTOP)
         this.sayCheesyPun("\"Looks like you fell for that one.\"");
 
-      if (brawlLocation == Location.ELECTRICAL_STORE)
+      if (location == Location.ELECTRICAL_STORE)
         this.sayCheesyPun("\"Looks like you blew a fuse.\"");
 
-      if (brawlLocation == Location.ICE_FACTORY)
+      if (location == Location.ICE_FACTORY)
         this.sayCheesyPun("\"You need to cool off.\"");
 
       savedTheDay = true;
+    } else {
+      System.out.println(this.name + " was unable to save the day. " + this.nemesis + " wins... this time.");
     }
 
     return savedTheDay;

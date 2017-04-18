@@ -13,4 +13,11 @@ Instructions:
         > Is there a defect with the component you're testing?
         > Is there a issue with the test?
         > Is the test specification incorrect?
-    - Also keep your eyes out for any incomplete or non-existent tests - a giveaway is the flag TODO!
+        > Hint: The failure messages are there to help you, try to use them.
+    - Also keep your eyes out for any incomplete or non-existent tests/functionality - a giveaway is the flag TODO!
+
+Extra activities for if you finish:
+    - Are there any tests which you feel are missing? Why?
+    - How would you enforce a strength range for Characters, rather than specifying an integer?
+    - How could you assign superpowers to Characters? Hint: Look up the difference between a
+      class and an interface. Which one would work better?
